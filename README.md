@@ -1,8 +1,6 @@
 # Software Systems labs @ IIITB
 
-Problem Statement 1 : 
-
-Write a menu driven program to create Employee Record.
+Problem Statement 1 : Write a menu driven program to create Employee Record.
 
 NOTE :
     1. The Record should contains: Employee Name, Employee Number, and Telephone Number.
