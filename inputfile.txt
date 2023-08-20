@@ -1,0 +1,3 @@
+This is the task of 7th question in the hands on 1 of the subject Software Systems. We are learning different system calls.
+
+The tasks is to write a program to copy file 1 into file 2.
