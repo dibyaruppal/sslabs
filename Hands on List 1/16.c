@@ -28,7 +28,7 @@ int main(int argc, char *argv[]){
 	sleep(10);
 	fl.l_type = F_UNLCK;
 	if(fcntl(fd, F_SETLK, &fl) == -1){
-		printf("Error ulocking with write !! \n");
+		printf("Error unlocking with write !! \n");
 		return 1;
 	}
 	printf("File unlocked from write lock !!\n");
