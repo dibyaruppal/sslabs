@@ -18,6 +18,7 @@ int main(int argc, char *argv[]){
 		printf("Error getting file flag !!\n");
 		return 1;
 	}
+	printf("Flag value : %d\n",flags);
 
 	// check the file access mode using the flags
 	int access_mode = flags & O_ACCMODE;
