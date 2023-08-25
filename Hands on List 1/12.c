@@ -7,7 +7,7 @@ int main(int argc, char *argv[]){
 	}
 
 	char *file_path = argv[1];
-	int fd = open(file_path,O_RDONLY);
+	int fd = open(file_path,O_WRONLY);
 	if(fd == -1){
 		printf("Error opening the file !!\n");
 		return 1;
@@ -18,5 +18,18 @@ int main(int argc, char *argv[]){
 		printf("Error getting file flag !!\n");
 		return 1;
 	}
+
+	// check the file access mode using the flags
+	int access_mode = flags & O_ACCMODE;
+
+	if(access_mode == O_RDONLY)
+		printf("File '%s' is opened in READ-ONLY mode !!\n", file_path);
+	else if(access_mode == O_WRONLY)
+		printf("File '%s' is opened in WRITE-ONLY mode !!\n",file_path);
+	else if(access_mode == O_RDWR)
+		printf("File '%s' is opened in READ-WRITE mode !!\n", file_path);
+	else
+		printf("Unknown access mode for file '%s' !!\n", file_path);
+
 	return 0;
 }
