@@ -1,3 +1,13 @@
+/*
+============================================================================
+Name : 6.c
+Author : Dibyarup Pal
+Description : Write a program to take input from STDIN and display on STDOUT. Use only read/write system calls
+Date: 24th Aug, 2023.
+============================================================================
+*/
+
+
 #include <stdio.h>
 #include <unistd.h>
 

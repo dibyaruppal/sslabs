@@ -1,3 +1,15 @@
+/*
+============================================================================
+Name : 16.c
+Author : Dibyarup Pal
+Description : Write a program to perform mandatory locking.
+		a. Implement write lock
+		b. Implement read lock
+Date: 24th Aug, 2023.
+============================================================================
+*/
+
+
 #include<fcntl.h>
 #include<stdio.h>
 #include<unistd.h>

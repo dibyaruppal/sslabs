@@ -1,3 +1,17 @@
+/*
+============================================================================
+Name : 18.c
+Author : Dibyarup Pal
+Description : Write a program to perform Record locking. (Part I - initialisation)
+		a. Implement write lock
+		b. Implement read lock
+	      Create three records in a file. Whenever you access a particular record,
+	      first lock it then modify/access to avoid race condition.
+Date: 24th Aug, 2023.
+============================================================================
+*/
+
+
 #include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>

@@ -1,3 +1,14 @@
+/*
+============================================================================
+Name : 17.c
+Author : Dibyarup Pal
+Description : Write a program to simulate online ticket reservation. Implement write lock
+	      Write a program to open a file, store a ticket number and exit.(Part I)
+Date: 24th Aug, 2023.
+============================================================================
+*/
+
+
 #include<stdio.h>
 #include<fcntl.h>
 #include<unistd.h>

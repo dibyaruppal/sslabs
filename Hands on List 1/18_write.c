@@ -1,3 +1,14 @@
+/*
+============================================================================
+Name : 18.c
+Author : Dibyarup Pal
+Description : Write a program to perform Record locking.
+		a. Implement write lock
+Date: 24th Aug, 2023.
+============================================================================
+*/
+
+
 #include<stdio.h>
 #include<sys/types.h>
 #include<sys/stat.h>
