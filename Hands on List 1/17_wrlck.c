@@ -5,7 +5,7 @@ Author : Dibyarup Pal
 Description : Write a program to simulate online ticket reservation.
 	      Write a separate program, to open the file, implement write lock, read the ticket number,
 	      increment the number and print the new ticket number then close the file.(Part II)
-Date: 24th Aug, 2023.
+Date: 27th Aug, 2023.
 ============================================================================
 */
 

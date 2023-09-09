@@ -4,7 +4,7 @@ Name : 18.c
 Author : Dibyarup Pal
 Description : Write a program to perform Record locking.
 		b. Implement read lock
-Date: 24th Aug, 2023.
+Date: 28th Aug, 2023.
 ============================================================================
 */
 

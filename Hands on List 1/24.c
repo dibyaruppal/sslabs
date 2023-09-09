@@ -22,12 +22,13 @@ int main(){
 		exit(1);
 	}
 	else if(child_pid == 0){
-		printf("This is Child Process !!\nChild process ID : %d\n",getpid());
-		exit(0);
+		printf("This is Child Process before sleep!!\nChild process ID : %d\n",getpid());
+		sleep(3);
+		printf("This is Child Process after sleep!!\nChild process ID : %d\n",getpid());
 	}
 	else{
 		printf("This is Parent Process !!\nParent process ID : %d\n",getpid());
-		printf("Child process ID : %d\n",child_pid);
+		exit(0);
 	}
 	return 0;
 }
