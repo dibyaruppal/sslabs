@@ -32,7 +32,7 @@ int main(){
 	FD_ZERO(&rfds);
 	FD_SET(fd, &rfds);
 
-	//printf("Enter text within 10 seconds :\n");
+	printf("Enter text within 10 seconds :\n");
 
 	int retval = select(fd+1, &rfds, NULL, NULL, &tv);
 	if(retval == -1){
