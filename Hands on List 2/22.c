@@ -3,7 +3,7 @@
 Name : 22.c
 Author : Dibyarup Pal
 Description : Write a program to wait for data to be written into FIFO within 10 seconds, use select system call with FIFO.
-Date: 3rd Oct, 2023.
+Date: 14th Oct, 2023.
 ============================================================================
 */
 
@@ -13,17 +13,26 @@ Date: 3rd Oct, 2023.
 #include<stdlib.h>
 #include<sys/time.h>
 #include<sys/select.h>
+#include<sys/types.h>
+#include<sys/stat.h>
 
 int main(){
 	fd_set rfds;
 
 	struct timeval tv;
-	tv.tv_sec = 10;
-	tv.tv_usec = 0;
-
 	char buff[1024];
+	
+	int fifoStatus; 
+	char *fifoName = "./22-myfifo";
+	
+    	//fifoStatus = mkfifo(fifoName, S_IRWXU);
+    	//if (fifoStatus == -1){
+        //	perror("Error while creating FIFO file fifoOne");
+	//	exit(1);
+	//}
 
-	int fd = open("myfifo", O_RDONLY|O_WRONLY);
+	int fd = open(fifoName, O_NONBLOCK | O_RDONLY);
+
 	if(fd == -1){
 		perror("open failed");
 		exit(1);
@@ -32,16 +41,18 @@ int main(){
 	FD_ZERO(&rfds);
 	FD_SET(fd, &rfds);
 
-	printf("Enter text within 10 seconds :\n");
+	tv.tv_sec = 10;
+        tv.tv_usec = 0;
 
 	int retval = select(fd+1, &rfds, NULL, NULL, &tv);
+	printf("retval : %d\n",retval);
 	if(retval == -1){
-		perror("select()");
+		perror("select error ");
 		exit(1);
 	}
 	else if(retval){
-		printf("Data is available for reading within 10 sec !!\n");
-		int r = read(fd,buff,sizeof(buff));
+		
+		int r = read(fd,&buff,sizeof(buff));
 		if(r == -1){
                 	perror("read failed");
                 	exit(1);
@@ -50,6 +61,7 @@ int main(){
 	}
 	else
 		printf("No data is available for reading within 10 sec !!\n");
-
+	
+	close(fd);
 	return 0;
 }
